@@ -1,0 +1,4 @@
+data/
+output/
+pretrain_pth_file/
+work_dirs/
