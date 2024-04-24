@@ -79,10 +79,9 @@ conda activate mmpretrain
 
 ```
 
-wget https://download.pytorch.org/whl/cu110/torch-1.7.1%2Bcu110-cp38-cp38-linux_x86_64.whl#sha256=709cec07bb34735bcf49ad1d631e4d90d29fa56fe23ac9768089c854367a1ac9
-
-pip install torch-1.7.1+cu110-cp38-cp38-linux_x86_64.whl
-
+wget https://download.pytorch.org/whl/cu111/torch-1.10.1% 2Bcu111-cp38-cp38-linux_x86_64.whl#sha256= 3d35d58cadb5abbfa25a474a33598a6bdc168c4306c3c20968159e6f3a4a2e46
+pip install torch-1.10.1+cu111-cp38-cp38-linux_x86_64.whl
+pip install numpy --upgrade
 ```
 
   
