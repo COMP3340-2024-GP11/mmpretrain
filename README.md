@@ -193,7 +193,7 @@ For pretrain model and additional data prelearning on Oxford then train on Oxfor
 ## Commands to reproduce results<a id="cmd_repro"/>
 
   if any command do not work in case. please use the "absolute path" of model configs or pretrain pth.
-
+ !!! In ViT, Additional data and TinyVit, We need to change the path of pth file to the absolute path.!!! then do the training
 ### Train model command (and testing)
 Place: be in the code folder given and activate the mmpretrain env already
 Data and pth: drag data folder and pth folder to the coder folder submitted.
