@@ -4,7 +4,8 @@ _base_ = [
     '../_base_/schedules/flowers_lrlow_pretrain_vit.py',
     '../_base_/tinyvit_save_runtime.py'
 ]
-
+#change the frozen stage to get full frozen and 0 frozen, also change the lr according to the schedule file
+#if the same outcome as the graph shown on the ppt is needed change schedules to flowers_pretrain_vit.py
 model = dict(
     type='ImageClassifier',
     backbone=dict(
