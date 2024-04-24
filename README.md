@@ -11,7 +11,7 @@
 -- 0. I have already refine the pretrained ViT, and now it perform a lot better than what is shown in presentaion slides and it grow steadily( I warm up and then let lr go down steadly and finally linear slight adjust, it is shown in the schedule)
 -- 1.We find out a lot of problem and did many experiments to solve them, such as data leakage when additional data in Oxford102 has overlap with Oxford17---We will just give the final non-data leakage data and code but not the one with this issue. 
 -- 2. In the freezing pretrain-ViT part, this version make it partially frozon because it got best performance--- in the code you can change the freezing parameter to see other performance outcome(I thought not that necessary to upload 3 seperate config)
--- 3. Considering the pth file of some model will be very huge, When saving the pth for testing you could self-defined a directory. ( My reference is just created a output-directory next to configs and give all model a sub-directory. if do not do these at first and adjust the command use to test and train, !!!a output may be created automatically if you just run the train command shown)
+-- 3. Considering the pth file of some model will be very huge, When saving the pth for testing you could self-defined a directory. ( you could just created a output-directory next to configs and give all model a sub-directory. if do not do these at first and adjust the command use to test and train, !!!a output may be created automatically if you just run the train command shown)
 
 
 - For any question and enquiry, please feel free to reach out to Ruilin Gao (u3577254@connect.hku.hk) 
