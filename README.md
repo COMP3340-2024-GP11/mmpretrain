@@ -197,7 +197,7 @@ If any command do not work in case. please use the "absolute path" of model conf
 - Place: be in the code folder given and activate the mmpretrain env already
 - Data and pth: drag data folder and pth folder to the coder folder submitted.
 
-*Reproduce Section ViT:*
+*Reproduce Section ViT and TinyViT SEResnet:*
 
 #### Attention Mechanism: ViT TinyVit SEResnet 
 
