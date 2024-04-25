@@ -6,12 +6,14 @@
 
 - This repository contains code for Attention Mechanism (Including ViT, TinyVit, SEResnet) and Additional Data Experiment which utilize Oxford102 to learn more general flower feature extraction and fintune and test on Oxford17.
 - Noted that: For some important output pth and log, we will uploaded one zip seperately and the data will also be a seperate zip. 
-- All these are done in mmpretrain( not mmclassification)
+- All these are done in mmpretrain (not mmclassification)
 - Someting to clarify:
--- 0. I have already refine the pretrained ViT, and now it perform a lot better than what is shown in presentaion slides and it grow steadily( I warm up and then let lr go down steadly and finally linear slight adjust, it is shown in the schedule)
--- 1.We find out a lot of problem and did many experiments to solve them, such as data leakage when additional data in Oxford102 has overlap with Oxford17---We will just give the final non-data leakage data and code but not the one with this issue. 
--- 2. In the freezing pretrain-ViT part, this version make it partially frozon because it got best performance--- in the code you can change the freezing parameter to see other performance outcome(I thought not that necessary to upload 3 seperate config)
--- 3. Considering the pth file of some model will be very huge, When saving the pth for testing you could self-defined a directory. ( you could just created a output-directory next to configs and give all model a sub-directory. if do not do these at first and adjust the command use to test and train, !!!a output may be created automatically if you just run the train command shown)
+  - 0. I have already refine the pretrained ViT, and now it perform a lot better than what is shown in presentaion slides and it grow steadily (I warm up and then let lr go down steadly and finally linear slight adjust, it is shown in the schedule)
+  - 1. We find out a lot of problem and did many experiments to solve them, such as data leakage when additional data in Oxford102 has overlap with Oxford17
+    - We will just give the final non-data leakage data and code but not the one with this issue. 
+  - 2. In the freezing pretrain-ViT part, this version make it partially frozon because it got best performance
+    - in the code you can change the freezing parameter to see other performance outcome(I thought not that necessary to upload 3 seperate config)
+  - 3. Considering the pth file of some model will be very huge, When saving the pth for testing you could self-defined a directory. ( you could just created a output-directory next to configs and give all model a sub-directory. if do not do these at first and adjust the command use to test and train, !!! a output may be created automatically if you just run the train command shown)
 
 
 - For any question and enquiry, please feel free to reach out to Ruilin Gao (u3577254@connect.hku.hk) 
@@ -79,18 +81,17 @@ conda activate mmpretrain
 
 ```
 
-wget https://download.pytorch.org/whl/cu111/torch-1.10.1% 2Bcu111-cp38-cp38-linux_x86_64.whl#sha256= 3d35d58cadb5abbfa25a474a33598a6bdc168c4306c3c20968159e6f3a4a2e46
+wget https://download.pytorch.org/whl/cu111/torch-1.10.1%2Bcu111-cp38-cp38-linux_x86_64.whl#sha256=3d35d58cadb5abbfa25a474a33598a6bdc168c4306c3c20968159e6f3a4a2e46
 pip install torch-1.10.1+cu111-cp38-cp38-linux_x86_64.whl
 pip install numpy --upgrade
+
 ```
 
   
 
-*_Please double check that you install the correct version of pytorch
+*Please double check that you install the correct version of pytorch*
 
   
-
-
   
 
 ****Step 3 Install cudatoolkit via conda-forge channel****
@@ -163,42 +164,40 @@ pip cache remove mmcls
 
   
 
-*HERE IS THE INSTALL:_install packages_ !!!*
+*HERE IS THE INSTALL: install packages!!!*
 
   
 
 ```
 conda activate mmpretrain  
 pip install torchvision==0.11.2  
-cd ~/mmpretrain/  
+cd ~/mmpretrain
 pip install -U openmim && mim install -e .
 ```
 
   
 
 ## Download data & checkpoints<a id="downloads"/>
-
-Noted: Please put the pretrain_pth_file and data and output(optional) directly to the folder of code( which is the original mmpretrain folder).
   
-For data and pretrain_pth_file:
-[[Attention Mechanism and Additional Data](https://connecthkuhk.sharepoint.com/:f:/s/COMP3340Group11Project2023-24Sem2/Ek3JjIDiz1hJht60M_uRFjMBCiypABm86Ln59WF2rFR4dQ?e=wIHA99)]
-
-For log and pth output for major experiment (it is big becasue of vit pth is 500MB each )for a reference:( the vit pth is the old version and tinyvitnoleakage pth is what used to test）they are 
-just proof that I train and adjust models. Actually I have deleted some so a chaos is made(I train some model tens or handreds of time leads to this)
-[[output_Attention_Mechanism_and_Additional_Data](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/zhongzy_connect_hku_hk/Ejn1EBU6wEBBms9aTV3eISoBKuU6n65irZnalxaUoCD6rA?e=PzcpLd)]
-For pretrain model and additional data prelearning on Oxford then train on Oxford17, you need to modify config for the pth path by copy the exact path of where you put these pth, 
-as above, recommended to directly put in the code folder (parallel to configs, data...).
+- For data and pretrain_pth_file:
+[Attention Mechanism and Additional Data](https://connecthkuhk.sharepoint.com/:f:/s/COMP3340Group11Project2023-24Sem2/Ek3JjIDiz1hJht60M_uRFjMBCiypABm86Ln59WF2rFR4dQ?e=wIHA99)
+For log and pth output for major experiment (it is big becasue of vit pth is 500MB each) for a reference: (the vit pth is the old version and tinyvitnoleakage pth is what used to test) they are just proof that I train and adjust models. Actually I have deleted some so a chaos is made (I train some model tens or handreds of time leads to this)
+- [output_Attention_Mechanism_and_Additional_Data](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/zhongzy_connect_hku_hk/Ejn1EBU6wEBBms9aTV3eISoBKuU6n65irZnalxaUoCD6rA?e=PzcpLd)
+- *!!!put the pretrain_pth_file and data and output(optional) directly to the folder of code (which is the original mmpretrain folder).*
+- For pretrain model and additional data prelearning on Oxford then train on Oxford17, you need to modify config for the pth path by copy the exact path of where you put these pth, as above, recommended to directly put in the code folder (parallel to configs, data...).
 
   
-
 ## Commands to reproduce results<a id="cmd_repro"/>
 
-  if any command do not work in case. please use the "absolute path" of model configs or pretrain pth.
+If any command do not work in case. please use the "absolute path" of model configs or pretrain pth.
  !!! In ViT, Additional data and TinyVit, We need to change the path of pth file to the absolute path.!!! then do the training
+
 ### Train model command (and testing)
-Place: be in the code folder given and activate the mmpretrain env already
-Data and pth: drag data folder and pth folder to the coder folder submitted.
-Reproduce Section ViT
+
+- Place: be in the code folder given and activate the mmpretrain env already
+- Data and pth: drag data folder and pth folder to the coder folder submitted.
+
+*Reproduce Section ViT:*
 
 #### Attention Mechanism: ViT TinyVit SEResnet 
 
@@ -206,7 +205,7 @@ ViT:
 
 (starting from ViT without pretrain adding warmup and all kinds of augmentation still not perform good, Even worse when I add more mechnism block, so we focus on pretrain-ViT)
 
-For the ViT part, we explore diffierent forzon stage for pretrain ViT, and found that patially forzon is the best. Explantion: it keep knowledge for pretraining and at the same time keep some of the model for learning new tasks. Fully forzon limit the finetune study and zero freezing lead to overfit possibility and need more data to train.
+For the ViT part, we explore diffierent frozen stage for pretrain ViT, and found that patially frozen is the best. Explantion: it keep knowledge for pretraining and at the same time keep some of the model for learning new tasks. Fully frozen limit the finetune study and zero freezing lead to overfit possibility and need more data to train.
 
 Here is how we can train the partial freezing model( could adjust the freezing stage to get others which I tought not to be that important)
  need to change pth in configs to actually pth absolute path.
@@ -273,8 +272,7 @@ So we use "photo hash" technique presented in our final presentation to solve th
 Check the data and there is a processed no_leakage Oxford102.
 
 About the experiments and how to test it:
-*The code and data are the "NO LEAKAGE" version, I did not upload the original
-Oxford102 resouces and the leakage pth.
+*The code and data are the "NO LEAKAGE" version, I did not upload the original Oxford102 resouces and the leakage pth.*
 
 The "oxford102_split_noleak" under data is the refined 102 data split. The 
 The "102_epoch_100.pth" is from pretraining 100 epochs on Oxford102 No leakage( prelearn if can not called pretrain)
@@ -306,14 +304,18 @@ redo training and testing above.
 
 ### Conlusion
 
-we know that seperate data, pretrain pth load for big model like vit and a new mmpretrain environment did bring you a lot of trouble. Thank you very much for your effort!
-if anything is not clear, do contact me through u3577254@connect.hku
+We know that seperate data, pretrain pth load for big model like vit and a new mmpretrain environment did bring you a lot of trouble. Thank you very much for your effort!
+If anything is not clear, do contact me through u3577254@connect.hku
 
+### Citation
 
+If you find this project useful in your research, please consider cite:
 
-
-  
-
-
-  
-
+```BibTeX
+@misc{2023mmpretrain,
+    title={OpenMMLab's Pre-training Toolbox and Benchmark},
+    author={MMPreTrain Contributors},
+    howpublished = {\url{https://github.com/open-mmlab/mmpretrain}},
+    year={2023}
+}
+```
