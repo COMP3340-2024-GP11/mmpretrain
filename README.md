@@ -181,11 +181,13 @@ pip install -U openmim && mim install -e .
 Noted: Please 
   
 For data and pretrain_pth_file:
-[[Attention Mechanism and Additional Data](https://connecthkuhk.sharepoint.com/:f:/s/COMP3340Group11Project2023-24Sem2/Ek3JjIDiz1hJht60M_uRFjMBCiypABm86Ln59WF2rFR4dQ?e=wIHA99)](https://hku.hk)
-For log and pth output for major experiment (it is big becasue of vit pth is 500MB each )for a reference:( the vit pth is the old version and tinyvitnoleakage pth is what used to test）they are just proof that I train and adjust models. Actually I have deleted some so a chaos is made(I train some model tens or handreds of time leads to this)
-[[output_Attention_Mechanism_and_Additional_Data](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/zhongzy_connect_hku_hk/Ejn1EBU6wEBBms9aTV3eISoBKuU6n65irZnalxaUoCD6rA?e=PzcpLd)](https://hku.hk)
+[[Attention Mechanism and Additional Data](https://connecthkuhk.sharepoint.com/:f:/s/COMP3340Group11Project2023-24Sem2/Ek3JjIDiz1hJht60M_uRFjMBCiypABm86Ln59WF2rFR4dQ?e=wIHA99)]
+For log and pth output for major experiment (it is big becasue of vit pth is 500MB each )for a reference:( the vit pth is the old version and tinyvitnoleakage pth is what used to test）they are 
+just proof that I train and adjust models. Actually I have deleted some so a chaos is made(I train some model tens or handreds of time leads to this)
+[[output_Attention_Mechanism_and_Additional_Data](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/zhongzy_connect_hku_hk/Ejn1EBU6wEBBms9aTV3eISoBKuU6n65irZnalxaUoCD6rA?e=PzcpLd)]
 ！！！put the pretrain_pth_file and data and output(optional) directly to the folder of code( which is the original mmpretrain folder).
-For pretrain model and additional data prelearning on Oxford then train on Oxford17, you need to modify config for the pth path by copy the exact path of where you put these pth, as above, recommended to directly put in the code folder (parallel to configs, data...).
+For pretrain model and additional data prelearning on Oxford then train on Oxford17, you need to modify config for the pth path by copy the exact path of where you put these pth, 
+as above, recommended to directly put in the code folder (parallel to configs, data...).
 
   
 
