@@ -307,6 +307,10 @@ redo training and testing above.
 We know that seperate data, pretrain pth load for big model like vit and a new mmpretrain environment did bring you a lot of trouble. Thank you very much for your effort!
 If anything is not clear, do contact me through u3577254@connect.hku
 
+### Additional alternative for data and pth:(not recommended but if in case, still not work please contact us)
+https://connecthkuhk-my.sharepoint.com/:f:/r/personal/hzyalex_connect_hku_hk/Documents/Alex/Learn/University/y4s2/comp3340/group/for_download_ruilin?e=5%3a8405566b241a48208dcb4fb554cc1ce0&sharingv2=true&fromShare=true&at=9
+https://connecthkuhk-my.sharepoint.com/:f:/r/personal/hzyalex_connect_hku_hk/Documents/Alex/Learn/University/y4s2/comp3340/group/for_download_ruilin?e=5%3a8405566b241a48208dcb4fb554cc1ce0&sharingv2=true&fromShare=true&at=9
+
 ### Citation
 
 If you find this project useful in your research, please consider cite:
